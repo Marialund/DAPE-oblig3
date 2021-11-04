@@ -9,11 +9,8 @@ public class UnikeTall{
 
    /* Konstruktør som mottar arrayets lengde som parameter og
      oppretter arrayet.  */
-        int lengde; //?
-
-        public UnikeTall(int lengde) {
+       public UnikeTall(int lengde) {
             talliste = new int[talliste.length];
-            this.lengde = lengde;
         }
 
    /*Metode som skal undersøke om et gitt tall finnes i arrayet fra før.
@@ -25,10 +22,8 @@ public class UnikeTall{
                 if (tall == talliste[i]){
                     return true;
                 }
-                else{
-                    return false;
-                }
             }
+            return false;
         }
 
    /* Metode som skal fylle arrayet med tilfeldige tall mellom 100 og 999,
@@ -38,38 +33,35 @@ public class UnikeTall{
      Tips bruk (int)(Math.random()*(900)+100); for å generere tallene mellom 100 og 999
    */
         public void tilfeldigeTall(){
-            for (int i = 0; i < talliste.length; i++) {
+            for (int i = 0; i < talliste.length;) {
                 int tall = (int)(Math.random()*(900)+100);
-                if (finnTallet(tall == true)){
-                    //?
+                if (!finnTallet(tall)){
+                    talliste[i]=tall;
+                    i++;
                 }
             }
         }
 
     // Metode som finner og returnerer det minste tallet i arrayet.
         public int minsteTall() {
-            int minste = Integer.MAX_VALUE; //?
+            int minste = talliste[0];
             for (int i = 0; i < talliste.length; i++) {
                 if (talliste[i] < minste) {
                     minste = talliste[i];
                 }
-                else {
-                    return minste;
-                }
             }
+            return minste;
         }
 
     // Metode som finner og returnerer det største tallet i arrayet.
         public int størsteTall() {
-            int største = Integer.MIN_VALUE; //?
+            int største = talliste[0];
             for (int i = 0; i < talliste.length; i++) {
                 if (talliste[i] < største) {
                     største = talliste[i];
                 }
-                else {
-                    return største;
-                }
             }
+            return største;
         }
 
 
@@ -86,16 +78,13 @@ public class UnikeTall{
 
 
    /* Metode som viser tallene i arrayet i en meldngsboks.
-     I tillegg skal det, i meldingsboks, skrives ut
-     opplysninger om hvilket tall som er minst, hvilket som er størst, og
-     hva som er gjennomsnittsverdien, jfr bildet over. Gjennomsnittverdien
-     skal skrives ut med en desimal. Bruk gjerne String.format("%.2f,tall) til dette.
-     Legg inn mellomrom mellom tallene og skriv ut et passende antall tall
-     per linje. */
-        public String SkrivUt{
-            showMessageDialog(null, "Array" + "\n" +
-                    "Minste tall er " + minste + "\n" +
-                    "Største tall er " + største + "\n" +
-                    "Gjennomsnittsverdien er " + gjennomsnitt);
-        }
-    }
+
+     I tillegg skal det, i meldingsboks, skrives ut opplysninger om hvilket tall som er minst, hvilket som er størst,
+     og hva som er gjennomsnittsverdien, jfr bildet over. Gjennomsnittverdien skal skrives ut med en desimal.
+     Bruk gjerne String.format("%.2f,tall) til dette. Legg inn mellomrom mellom tallene og skriv ut et passende antall
+     tall per linje. */
+
+
+
+    // public String ut = "Minste tall er " + minsteTall() + "\n" + "Største tall er " + størsteTall() + "\n" + "Gjennomsnittsverdien er " + gjennomsnitt();
+}

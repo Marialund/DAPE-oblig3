@@ -13,7 +13,5 @@ public class Main {
         int øvreGrense = 1000;
 
         UnikeTall tallene = new UnikeTall(lengde);
-
-        //skriv ut?
     }
 }
