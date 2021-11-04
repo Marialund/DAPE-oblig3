@@ -1,5 +1,7 @@
 package Oblig3;
 
+import javax.swing.*;
+
 import static javax.swing.JOptionPane.*;
 
 import java.text.DecimalFormat;
@@ -11,7 +13,7 @@ public class UnikeTall{
 
        /* Konstruktør som mottar arrayets lengde som parameter og
          oppretter arrayet.  */
-       private UnikeTall(int lengde) {
+       public UnikeTall(int lengde) {
             talliste = new int[lengde];
         }
 
@@ -84,12 +86,15 @@ public class UnikeTall{
           og hva som er gjennomsnittsverdien, jfr bildet over.
           Gjennomsnittverdien skal skrives ut med en desimal. Bruk gjerne String.format("%.2f,tall) til dette.
           Legg inn mellomrom mellom tallene og skriv ut et passende antall tall per linje. */
-        public void SkrivUt(){
+        public void skrivUt(){
+            String ut = "";
+            for (int i = 0; i < talliste.length; i++){
+                ut = "" + talliste[i];
+            }
 
-
-            //modulus
-            counter ++;
-            if(counter %8==0){
+            if((i +1) % 8 == 0) {
+                ut += "\n";
+                }
 
             }
 
@@ -98,6 +103,6 @@ public class UnikeTall{
                     "Største tall er " + størsteTall() + "\n" +
                     "Gjennomsnittsverdien er " + df1.format(gjennomsnitt());;
 
-        }
+                    JOptionPane.showMessageDialog(null,ut);
 
 }

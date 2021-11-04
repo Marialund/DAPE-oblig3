@@ -10,6 +10,6 @@ public class Main {
         int lengde = Integer.parseInt(antall);
 
         UnikeTall tallene = new UnikeTall(lengde);
-        //kall på skriv ut
+        tallene.skrivUt();
     }
 }
