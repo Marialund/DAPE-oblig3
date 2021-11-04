@@ -9,9 +9,7 @@ public class Main {
         String antall = showInputDialog("Hvor mange tall mellom 100 og 1000 ønsker du å trekke?");
         int lengde = Integer.parseInt(antall);
 
-        int nedreGrense = 100;
-        int øvreGrense = 1000;
-
         UnikeTall tallene = new UnikeTall(lengde);
+        //kall på skriv ut
     }
 }
