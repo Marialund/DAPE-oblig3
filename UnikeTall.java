@@ -87,22 +87,23 @@ public class UnikeTall{
           Gjennomsnittverdien skal skrives ut med en desimal. Bruk gjerne String.format("%.2f,tall) til dette.
           Legg inn mellomrom mellom tallene og skriv ut et passende antall tall per linje. */
         public void skrivUt(){
-            String ut = "";
+            String ut = " ";
             for (int i = 0; i < talliste.length; i++){
-                ut = "" + talliste[i];
-            }
+                ut += " " + talliste[i];
 
-            if((i +1) % 8 == 0) {
-                ut += "\n";
+                if((i + 1) % 8 == 0) {
+                    ut += "\n";
                 }
-
             }
 
             DecimalFormat df1 = new DecimalFormat(".#");
-            String ut = "Minste tall er " + minsteTall() + "\n" +
-                    "Største tall er " + størsteTall() + "\n" +
-                    "Gjennomsnittsverdien er " + df1.format(gjennomsnitt());;
 
-                    JOptionPane.showMessageDialog(null,ut);
+            ut += "Minste tall er " + minsteTall() + "\n" +
+                    "Største tall er " + størsteTall() + "\n" +
+                    "Gjennomsnittsverdien er " + df1.format(gjennomsnitt());
+
+            JOptionPane.showMessageDialog(null,ut);
+
+            }
 
 }
